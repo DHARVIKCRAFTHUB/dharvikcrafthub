@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dharvikcrafthub </title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6a4e42;
+      --accent: #ff914d;
+      --bg: #fff8f2;
+      --text: #3a2d25;
+      --footer: #4e362e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+body {
+  background-image: url('images/cupcrunch logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 450px auto;
+  opacity: 1;
+  /* Faint effect ke liye overlay or filter use karenge */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url('images/cupcrunch logo.png') no-repeat center center;
+  background-size: 450px auto;
+  opacity: 0.055; /* Yeh adjust karo -- 0.03 se 0.09 tak try karo */
+  pointer-events: none;
+}
+    header {
+      background: #fff;
+      box-shadow: 0 2px 8px #0001;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-logo {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.05em;
+      transition: color .2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #fff8f2 70%, #fde3d0 100%);
+      padding: 56px 0 32px 0;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.6em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: .5px;
+    }
+    .hero p {
+      font-size: 1.28em;
+      margin-bottom: 28px;
+      color: #5a463b;
+    }
+    .hero .cta-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      font-size: 1.1em;
+      border-radius: 28px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 3px 12px #0001;
+      transition: background .2s, transform .2s;
+    }
+    .hero .cta-btn:hover {
+      background: #e67b1a;
+      transform: translateY(-2px) scale(1.03);
+    }
+    /* Announcement */
+    .announcement {
+      background: var(--accent);
+      color: #fff;
+      padding: 18px 0 12px 0;
+      text-align: center;
+      font-size: 1.05em;
+      font-weight: 500;
+      letter-spacing: .2px;
+    }
+    .announcement .shop-btns {
+      margin-top: 8px;
+    }
+    .announcement .shop-btn {
+      background: #fff;
+      color: var(--accent);
+      border: 2px solid #fff;
+      padding: 7px 20px;
+      border-radius: 20px;
+      font-size: 1em;
+      font-weight: 600;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: background .18s, color .18s;
+      display: inline-block;
+    }
+    .announcement .shop-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    /* Product Section */
+    .product-section {
+      padding: 44px 0 30px 0;
+      text-align: center;
+    }
+    .product-section h2 {
+      font-size: 2em;
+      color: var(--primary);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 3px 18px #0001;
+      display: inline-block;
+      padding: 30px 34px 26px 34px;
+      margin-top: 12px;
+      max-width: 370px;
+    }
+    .product-card img {
+      width: 135px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .product-card h3 {
+      font-size: 1.28em;
+      color: var(--text);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .product-card p {
+      font-size: 1em;
+      color: #7a5b45;
+      margin-bottom: 18px;
+    }
+    .product-card .shop-btns .shop-btn {
+      margin: 0 8px;
+      margin-top: 0;
+    }
+.about-section {
+  background: #fbeee6;
+  padding: 48px 0 44px 0;
+  text-align: center;
+  border-radius: 32px;
+  box-shadow: 0 2px 16px #e9d1bf60;
+  margin: 36px auto 28px auto;
+  max-width: 950px;
+}
+.about-section h2 {
+  color: #6a4e42;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+.about-section p {
+  font-size: 1.14em;
+  color: #66524a;
+  margin: 0 auto;
+  max-width: 650px;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .about-section {
+    padding: 22px 2vw 18px 2vw;
+    border-radius: 18px;
+  }
+  .about-section h2 { font-size: 1.3em; }
+  .about-section p { font-size: 1em; }
+}
+    /* Why Choose CupCrunch */
+    .why-cupcrunch {
+      background: #f5e3d5;
+      padding: 48px 0 44px 0;
+    }
+    .why-cupcrunch h2 {
+      text-align: center;
+      font-size: 2.05em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 36px;
+      letter-spacing: .3px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 14px #0001;
+      width: 205px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 22px 20px;
+      text-align: center;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .feature:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 6px 24px #0002;
+    }
+    .feature i, .feature img.trusted-logo {
+      font-size: 2.2em;
+      color: var(--accent);
+      margin-bottom: 13px;
+      margin-top: 2px;
+    }
+    .feature img.trusted-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff;
+      border: 2px solid #eee;
+      margin-bottom: 13px;
+    }
+    .feature h3 {
+      font-size: 1.04em;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 7px;
+    }
+    .feature p {
+      font-size: 0.98em;
+      color: #6d5849;
+      margin-top: 0;
+    }
+    /* Footer */
+    footer {
+      background: var(--footer);
+      color: #fff8f2;
+      text-align: center;
+      padding: 28px 0 12px 0;
+      font-size: 1em;
+      margin-top: 18px;
+    }
+    .footer-social {
+      margin: 10px 0 16px 0;
+    }
+    .footer-social a {
+      color: #fff8f2;
+      margin: 0 8px;
+      font-size: 1.25em;
+      transition: color .2s;
+      text-decoration: none;
+    }
+    .footer-social a:hover {
+      color: var(--accent);
+    }
+    /* Responsive */
+    @media (max-width: 800px) {
+      .features {
+        flex-direction: column;
+        gap: 22px;
+        align-items: center;
+      }
+      .feature {
+        width: 90vw;
+        max-width: 350px;
+      }
+      .product-card {
+        max-width: 90vw;
+      }
+      .nav ul {
+        gap: 16px;
+      }
+    }
+    @media (max-width: 540px) {
+      .hero h1 { font-size: 1.6em; }
+      .container { padding: 0 6px; }
+      .site-logo { height: 38px; }
+      .product-card { padding: 16px 4px; }
+      .why-cupcrunch { padding: 32px 0 30px 0;}
+      .why-cupcrunch h2 { font-size: 1.2em; margin-bottom: 18px;}
+      .feature { padding: 18px 4px 11px 4px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="#"><img src="images/cupcrunch logo.png" alt="CupCrunch Logo" class="site-logo"></a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#product">Products</a></li>
+          <li><a href="#why">Mission</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="container">
+      <h1>Art of soul</h1>
+      <p>Enjoy your beverage in a 100% edible, eco-friendly cup.<br>
+      The future of sustainable sipping starts here!</p>
+      <a href="#product"><button class="cta-btn">Order Now</button></a>
+    </div>
+  </section>
+
+  <!-- Announcement Section -->
+  <div class="announcement">
+    🚀 <b>Big News!</b> CupCrunch ab live hai Flipkart aur Amazon dono par! Royal Sip, Crunchy Bite, Zero Waste Delight ✨
+    <div class="shop-btns">
+      <a href="https://dl.flipkart.com/s/I1x9ofNNNN" target="_blank" class="shop-btn"><i class="fa-brands fa-flipkart"></i> Buy on Flipkart</a>
+      <a href="https://amzn.in/d/6JChkSO" target="_blank" class="shop-btn"><i class="fa-brands fa-amazon"></i> Buy on Amazon</a>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <section class="product-section" id="product">
+    <h2>Our Product</h2>
+    <div class="product-card">
+      <img src="images/ms_zeju0_512_564454308.jpg" alt="Edible Coffee Cup">
+      <h3>Coffee Flavour - Crunchy Edible Cup</h3>
+      <p>Enjoy your hot coffee in a cup you can eat! 100% edible, crunchy, and delicious—no waste, just taste.</p>
+      <div class="shop-btns">
+        <a href="https://dl.flipkart.com/s/I1x9ofNNNN" target="_blank" class="shop-btn"><i class="fa-brands fa-flipkart"></i> Buy on Flipkart</a>
+        <a href="https://amzn.in/d/6JChkSO" target="_blank" class="shop-btn"><i class="fa-brands fa-amazon"></i> Buy on Amazon</a>
+      </div>
+    </div>
+  </section>
+<section class="about-section" id="about">
+  <div class="container">
+    <h2>About CupCrunch</h2>
+    <p>
+      CupCrunch is an edible cup brand bringing eco-friendly, tasty, and sustainable alternatives to disposable cups.<br>
+      Every sip ends with a delightful crunch — good for you, and great for the planet.
+    </p>
+  </div>
+</section>
+
+  <!-- Why Choose CupCrunch / Brand Story -->
+  <section class="why-cupcrunch" id="why">
+    <div class="container">
+      <h2>Why Choose CupCrunch?</h2>
+      <div class="features">
+        <div class="feature">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>100% Edible & Eco-friendly</h3>
+          <p>No plastic, no paper – just a fully edible cup! Good for you, great for the planet.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-star"></i>
+          <h3>Made with Premium Ingredients</h3>
+          <p>Crafted from high-quality, safe, & tasty ingredients for a delightful crunch every sip.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-box-open"></i>
+          <h3>Zero Waste Packaging</h3>
+          <p>Sustainable materials in every box. Our packaging is as responsible as our product.</p>
+        </div>
+        <div class="feature">
+          <img src="images/Shekhawat.png" alt="Shekhawat Group Logo" class="trusted-logo">
+          <h3>Trusted by Shekhawat Group of Companies</h3>
+          <p>Backed and trusted by industry leaders for quality and sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/official.cupcrunch2025" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:bhanupartap9598@gmail.com"><i class="fa fa-envelope"></i></a>
+      <a href="https://wa.me/919256259598" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div>
+      <b>Contact:</b> bhanupartap9598@gmail.com | +91-9256259598<br>
+      <b>Instagram:</b> @official.cupcrunch2025
+    </div>
+    <div style="margin-top:12px;">
+      &copy; 2025 CupCrunch. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
